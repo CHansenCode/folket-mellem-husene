@@ -1,0 +1,155 @@
+//resets
+.header {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
+  button {
+    border: thin solid currentColor;
+    background: transparent;
+    color: currentColor;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+//globals & vars
+.header * {
+  transition: 0.3s ease;
+}
+
+//structure
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 3vw;
+  right: 3vw;
+
+  height: 3rem;
+  max-width: 94vw;
+
+  nav {
+    position: relative;
+    z-index: 101;
+    height: 3rem;
+    width: 3rem;
+
+    .slideIn {
+      position: absolute;
+      z-index: 103;
+    }
+    .openCloseBtn {
+      position: relative;
+      z-index: 104;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  top: 3vw;
+  left: 3vw;
+  margin: 0;
+  padding: 0;
+
+  font-weight: 800;
+  font-family: poppins;
+  font-size: 3rem;
+  line-height: 3rem;
+
+  text-shadow: 4px 4px 2px lightgray;
+}
+
+//elements & styling
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header nav .openCloseBtn {
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  border-radius: 50%;
+  box-shadow: 0 0 1rem -0.4rem currentColor;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h5 {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: white;
+  }
+}
+
+.slideIn {
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    height: 2rem;
+    width: 2rem;
+
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+
+    border-radius: 50%;
+    box-shadow: 0 0 1rem -0.4rem currentColor;
+    color: white;
+
+    pointer-events: none;
+  }
+
+  button:nth-of-type(1) {
+    transform: translateY(-5vw);
+  }
+  button:nth-of-type(2) {
+    transform: translateY(-10vw);
+  }
+  button:nth-of-type(3) {
+    transform: translateY(-15vw);
+  }
+}
+
+.slideIn_open {
+  opacity: 1;
+  top: 3rem;
+
+  button {
+    pointer-events: all;
+  }
+
+  button:nth-of-type(1) {
+    transform: translateY(0);
+  }
+  button:nth-of-type(2) {
+    transform: translateY(0);
+  }
+  button:nth-of-type(3) {
+    transform: translateY(0);
+  }
+}
